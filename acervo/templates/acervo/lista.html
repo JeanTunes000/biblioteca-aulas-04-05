@@ -1,0 +1,45 @@
+{% extends 'acervo/base.html' %}
+
+{% block conteudo %}
+<h2>Acervo de livros</h2>
+
+<form method="get" class="filtros">
+    <input type="text" name="nome" placeholder="Pesquisar por nome"
+           value="{{ nome }}">
+
+    <select name="tipo">
+        <option value="">Todos os tipos</option>
+        <option value="DIGITAL" {% if tipo == 'DIGITAL' %}selected{% endif %}>Digital</option>
+        <option value="FISICO" {% if tipo == 'FISICO' %}selected{% endif %}>Físico</option>
+    </select>
+
+    <select name="categoria">
+        <option value="">Todas as categorias</option>
+        {% for codigo, descricao in categorias %}
+        <option value="{{ codigo }}" {% if categoria == codigo %}selected{% endif %}>
+            {{ descricao }}
+        </option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Pesquisar</button>
+    <a class="botao" href="{% url 'lista' %}">Limpar</a>
+</form>
+
+<div class="grid">
+{% for livro in livros %}
+    <article class="livro">
+        <h3>{{ livro.titulo }}</h3>
+        <p><strong>Autor:</strong> {{ livro.autor }}</p>
+        <p><strong>Ano:</strong> {{ livro.ano }}</p>
+        <p><strong>Tipo:</strong> {{ livro.get_tipo_acervo_display }}</p>
+        <p><strong>Categoria:</strong> {{ livro.get_categoria_display }}</p>
+        <p><strong>Disponível:</strong>
+            {% if livro.disponivel %}Sim{% else %}Não{% endif %}
+        </p>
+    </article>
+{% empty %}
+    <p>Nenhum livro encontrado.</p>
+{% endfor %}
+</div>
+{% endblock %}

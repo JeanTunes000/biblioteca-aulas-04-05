@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca - Acervo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px;
+            background: #f5f6f8;
+        }
+        header {
+            background: white;
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        .filtros, .livro {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 18px;
+        }
+        input, select, button {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        button {
+            cursor: pointer;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+        }
+        .botao {
+            display: inline-block;
+            padding: 10px 14px;
+            background: #eee;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Biblioteca</h1>
+    <nav>
+        <a href="{% url 'lista' %}">Acervo</a>
+        <a href="{% url 'novo_livro' %}">Cadastrar livro</a>
+        <a href="/admin/">Admin</a>
+    </nav>
+</header>
+
+{% block conteudo %}{% endblock %}
+
+</body>
+</html>
