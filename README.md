@@ -31,3 +31,5 @@ Acesse:
 ## Modelo Livro
 
 ## Tipos de acervo: Digital e Físico
+
+## Categorias de acervo
