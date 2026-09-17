@@ -25,3 +25,5 @@ python manage.py runserver
 Acesse:
 - http://127.0.0.1:8000/livros/
 - http://127.0.0.1:8000/admin/
+
+## Configuração do aplicativo acervo
