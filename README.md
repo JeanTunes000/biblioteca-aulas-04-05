@@ -41,3 +41,5 @@ Acesse:
 ## Pesquisa por nome
 
 ## Filtros por tipo e categoria
+
+## Execução do projeto
