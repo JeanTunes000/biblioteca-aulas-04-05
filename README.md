@@ -39,3 +39,5 @@ Acesse:
 ## Listagem de livros
 
 ## Pesquisa por nome
+
+## Filtros por tipo e categoria
