@@ -29,3 +29,5 @@ Acesse:
 ## Configuração do aplicativo acervo
 
 ## Modelo Livro
+
+## Tipos de acervo: Digital e Físico
